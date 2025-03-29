@@ -1,0 +1,10 @@
+{% extends  "layout/app.html" %}
+
+ {% block content %}
+
+<h1>Welcome to your Dashboard: {{request.user.username}}</h1>
+<button type="submit" ><a href="{% url 'user:logout' %}" class="some-class">logout</a></button>
+<button type="submit" ><a href="{% url 'user:change_password' %}">Change Password</a></button>
+
+
+{% endblock content %} 

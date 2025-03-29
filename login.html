@@ -1,0 +1,24 @@
+{% extends  "layout/app.html" %}
+
+{% block content %}
+
+<form method="post" action="{% url 'user:login' %}">
+    {% comment %} <a href="{% url 'user:register' %}">Register here</a> {% endcomment %}
+    {% csrf_token %}
+   
+    <h1> login </h1>
+    {{ form.as_p }}
+
+    
+    <button type="submit" class="btn btn-dark">LOGIN IN</button>
+
+    {% comment %} <a href="{% url 'register' %} class="btn btn-default">Create a new account</a> {% endcomment %}
+    <button type="submit" ><a href="{% url 'user:register' %}" class="some-class">Create a new account</a></button>
+    <button type="submit" ><a href="{% url 'home' %}" class="some-class">Return to Home Page</a></button>
+    <button type="submit" ><a href="{% url 'user:password_reset' %}" class="some-class">forget_password</a></button>
+
+</form>
+
+{% endblock content %} 
+
+
